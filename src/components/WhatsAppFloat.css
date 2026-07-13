@@ -1,0 +1,60 @@
+/* ---------- WhatsApp Float ---------- */
+.wa-float {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #25D366, #20B858);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.9rem;
+  padding: 14px 22px;
+  border-radius: 999px;
+  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.4);
+  transition: all 0.4s var(--ease-out);
+  opacity: 0;
+  transform: translateY(20px) scale(0.9);
+  pointer-events: none;
+}
+
+.wa-float--visible {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.wa-float:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 36px rgba(37, 211, 102, 0.5);
+}
+
+.wa-float svg {
+  width: 1.4em;
+  height: 1.4em;
+  flex-shrink: 0;
+}
+
+/* Pulse ring */
+.wa-float__ring {
+  position: absolute;
+  inset: -4px;
+  border-radius: 999px;
+  border: 2px solid rgba(37, 211, 102, 0.5);
+  animation: pulse-ring 2s infinite;
+  pointer-events: none;
+}
+
+@media (max-width: 560px) {
+  .wa-float__text {
+    display: none;
+  }
+
+  .wa-float {
+    padding: 16px;
+    border-radius: 50%;
+  }
+}

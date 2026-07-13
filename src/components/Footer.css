@@ -1,0 +1,136 @@
+/* ---------- Footer ---------- */
+.footer {
+  background: var(--dark-bg);
+  color: rgba(255, 255, 255, 0.75);
+  padding: 60px 0 28px;
+  font-size: 0.88rem;
+}
+
+.footer__grid {
+  display: grid;
+  gap: 36px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .footer__grid {
+    grid-template-columns: 1.6fr 1fr 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+/* Brand */
+.footer__logo-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  margin-bottom: 16px;
+}
+
+.footer__logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--emerald), var(--gold));
+  display: grid;
+  place-items: center;
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 1.1rem;
+  color: var(--white);
+}
+
+.footer__name {
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--white);
+  line-height: 1.15;
+}
+
+.footer__name small {
+  display: block;
+  font-weight: 600;
+  font-size: 0.68rem;
+  opacity: 0.8;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.footer__desc {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  opacity: 0.75;
+  max-width: 320px;
+}
+
+/* Columns */
+.footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer__col h4 {
+  color: var(--white);
+  font-size: 0.88rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+  letter-spacing: 0.04em;
+}
+
+.footer__col a,
+.footer__col span {
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+}
+
+.footer__col a:hover {
+  color: var(--gold-light);
+}
+
+/* Bottom */
+.footer__bottom {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer__bottom p {
+  font-size: 0.78rem;
+  opacity: 0.6;
+}
+
+.footer__socials {
+  display: flex;
+  gap: 12px;
+}
+
+.footer__socials a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  display: grid;
+  place-items: center;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.25s ease;
+}
+
+.footer__socials a:hover {
+  background: var(--emerald);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.footer__socials svg {
+  width: 16px;
+  height: 16px;
+}

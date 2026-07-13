@@ -1,0 +1,81 @@
+/* ---------- Process — Horizontal Card Stepper ---------- */
+.process {
+  background: var(--white);
+}
+
+.process__heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 3rem);
+  text-align: center;
+  color: var(--ink);
+}
+
+.process__sub {
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+  margin-top: 8px;
+}
+
+.process__track {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px;
+  margin-top: 52px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.process__step {
+  background: var(--cream);
+  padding: 32px 22px;
+  text-align: center;
+  transition: background 0.3s ease;
+  position: relative;
+}
+
+.process__step:hover {
+  background: var(--emerald);
+  color: var(--white);
+}
+
+.process__step:hover .process__step-desc {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.process__step:hover .process__num {
+  color: var(--gold-light);
+}
+
+.process__num {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 2.2rem;
+  color: var(--emerald);
+  line-height: 1;
+  display: block;
+  margin-bottom: 14px;
+  transition: color 0.3s ease;
+}
+
+.process__step-title {
+  font-weight: 800;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.process__step-desc {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  transition: color 0.3s ease;
+}
+
+/* Responsive: stack on mobile */
+@media (max-width: 860px) {
+  .process__track {
+    grid-template-columns: 1fr;
+    border-radius: var(--radius);
+  }
+}

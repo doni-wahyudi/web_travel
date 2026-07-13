@@ -1,0 +1,117 @@
+/* ---------- FAQ — Split Layout ---------- */
+.faq-section {
+  background: var(--cream);
+}
+
+.faq-section__layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+@media (min-width: 860px) {
+  .faq-section__layout {
+    grid-template-columns: 1fr 1.6fr;
+    gap: 60px;
+    align-items: start;
+  }
+}
+
+.faq-section__left {
+  position: sticky;
+  top: 100px;
+}
+
+.faq-section__heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.faq-section__desc {
+  color: var(--ink-soft);
+  margin-top: 12px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.faq-section__link {
+  display: inline-block;
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--emerald);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.faq-section__link:hover {
+  color: var(--emerald-deep);
+}
+
+/* Accordion items */
+.faq-section__right {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--sand);
+  transition: background 0.2s ease;
+}
+
+.faq-item__q {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 0;
+  text-align: left;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--ink);
+  transition: color 0.2s ease;
+}
+
+.faq-item--open .faq-item__q {
+  color: var(--emerald);
+}
+
+.faq-item__toggle {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--sand);
+  display: grid;
+  place-items: center;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--ink-soft);
+  transition: all 0.25s ease;
+}
+
+.faq-item--open .faq-item__toggle {
+  background: var(--emerald);
+  color: var(--white);
+}
+
+.faq-item__a {
+  overflow: hidden;
+  transition: max-height 0.35s var(--ease-out);
+}
+
+.faq-item__a p {
+  padding: 0 0 18px;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}

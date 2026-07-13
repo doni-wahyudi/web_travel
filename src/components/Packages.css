@@ -1,0 +1,194 @@
+/* ---------- Pricing — Clean Modern Cards ---------- */
+.pricing {
+  background: var(--cream);
+}
+
+.pricing__heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 3rem);
+  text-align: center;
+  color: var(--ink);
+}
+
+.pricing__sub {
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+  margin-top: 8px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pricing__grid {
+  display: grid;
+  gap: 20px;
+  margin-top: 48px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 860px) {
+  .pricing__grid {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+  }
+}
+
+/* Card */
+.pricing-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 36px 28px;
+  border: 1.5px solid var(--sand);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.4s var(--ease-out);
+}
+
+.pricing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Popular card */
+.pricing-card--pop {
+  border-color: var(--emerald);
+  box-shadow: 0 0 0 1px var(--emerald), var(--shadow-md);
+}
+
+.pricing-card--pop:hover {
+  box-shadow: 0 0 0 1px var(--emerald), var(--shadow-xl);
+}
+
+.pricing-card__label {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--emerald);
+  color: var(--white);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 5px 18px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.pricing-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.pricing-card__name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  font-size: 1.3rem;
+}
+
+.pricing-card__dur {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--ink-muted);
+  background: var(--cream);
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+/* Price display */
+.pricing-card__price {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--sand);
+}
+
+.pricing-card__currency {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  align-self: flex-start;
+  margin-top: 8px;
+}
+
+.pricing-card__amount {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 3.5rem;
+  color: var(--emerald);
+  line-height: 1;
+}
+
+.pricing-card__unit {
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  font-weight: 600;
+}
+
+/* Feature list */
+.pricing-card__list {
+  list-style: none;
+  flex: 1;
+  margin-bottom: 24px;
+}
+
+.pricing-card__list li {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  padding: 6px 0 6px 24px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.pricing-card__list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--emerald);
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+
+/* CTA */
+.pricing-card__btn {
+  display: block;
+  text-align: center;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 2px solid var(--emerald);
+  color: var(--emerald);
+  transition: all 0.3s var(--ease-out);
+}
+
+.pricing-card__btn:hover {
+  background: var(--emerald);
+  color: var(--white);
+}
+
+.pricing-card__btn--fill {
+  background: var(--emerald);
+  color: var(--white);
+  border-color: var(--emerald);
+}
+
+.pricing-card__btn--fill:hover {
+  background: var(--emerald-deep);
+  border-color: var(--emerald-deep);
+}
+
+.pricing__note {
+  text-align: center;
+  margin-top: 28px;
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+}

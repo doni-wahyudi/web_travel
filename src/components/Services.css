@@ -1,0 +1,116 @@
+/* ---------- Services — Original Grid Design ---------- */
+.services {
+  background: var(--cream);
+}
+
+.services__header {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-bottom: 48px;
+}
+
+@media (min-width: 768px) {
+  .services__header {
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+    gap: 40px;
+  }
+}
+
+.services__heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.services__intro {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  max-width: 400px;
+}
+
+.services__grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 540px) {
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .services__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Card — entire card is a link */
+.svc-card {
+  display: flex;
+  flex-direction: column;
+  padding: 28px 24px;
+  border-radius: var(--radius);
+  background: var(--white);
+  border: 1px solid transparent;
+  text-decoration: none;
+  color: var(--ink);
+  transition: all 0.35s var(--ease-out);
+  cursor: pointer;
+  position: relative;
+}
+
+.svc-card:hover {
+  border-color: var(--emerald);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(13, 74, 62, 0.1);
+}
+
+.svc-card__emoji {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  display: block;
+  width: 52px;
+  height: 52px;
+  line-height: 52px;
+  text-align: center;
+  background: var(--cream);
+  border-radius: 14px;
+  transition: transform 0.3s var(--ease-spring);
+}
+
+.svc-card:hover .svc-card__emoji {
+  transform: scale(1.12) rotate(-5deg);
+}
+
+.svc-card__title {
+  font-weight: 800;
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+
+.svc-card__desc {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.svc-card__action {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--emerald);
+  transition: gap 0.2s ease;
+}
+
+.svc-card:hover .svc-card__action {
+  color: var(--emerald-deep);
+}
