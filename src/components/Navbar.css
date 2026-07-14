@@ -237,7 +237,7 @@
 @media (max-width: 968px) {
   .navbar__links-desktop,
   .navbar__cta-desktop {
-    display: none;
+    display: none !important;
   }
 
   .navbar__hamburger {
