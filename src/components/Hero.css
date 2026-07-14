@@ -266,8 +266,8 @@
   .hero__content {
     position: relative;
     z-index: 2;
-    /* Top padding clears navbar (~70px) + badge = 96px. Bottom padding is small because wave is now in-flow */
-    padding: 96px 20px 48px;
+    /* 110px top clears the fixed navbar (70px) + safe area + breathing room */
+    padding: 110px 20px 56px;
   }
 
   .hero__meta {
@@ -301,7 +301,7 @@
 
 @media (max-width: 480px) {
   .hero__content {
-    padding: 88px 16px 40px;
+    padding: 100px 16px 48px;
   }
 
   .hero__ctas {

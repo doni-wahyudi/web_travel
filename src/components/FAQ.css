@@ -15,11 +15,15 @@
     gap: 60px;
     align-items: start;
   }
+
+  .faq-section__left {
+    position: sticky;
+    top: 100px;
+  }
 }
 
 .faq-section__left {
-  position: sticky;
-  top: 100px;
+  position: static; /* Remove sticky by default — override to sticky only on desktop */
 }
 
 .faq-section__heading {

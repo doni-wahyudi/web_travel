@@ -68,10 +68,15 @@
 }
 
 @media (max-width: 768px) {
+  .cta-banner {
+    padding: 24px 0 60px;
+  }
+
   .cta-banner__inner {
     flex-direction: column;
     text-align: center;
     padding: 40px 28px;
+    margin: 0 16px; /* Horizontal breathing room — card no longer edge-to-edge */
   }
 
   .cta-banner__desc {
