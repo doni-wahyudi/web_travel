@@ -23,6 +23,22 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Measure the real navbar height and expose it as a CSS variable
+  // so other sections (hero, etc.) can use it for exact clearance
+  useEffect(() => {
+    const nav = document.getElementById('navbar')
+    if (!nav) return
+    const ro = new ResizeObserver(() => {
+      const h = nav.getBoundingClientRect().height
+      document.documentElement.style.setProperty('--navbar-h', `${h}px`)
+    })
+    ro.observe(nav)
+    // Set immediately on mount
+    const h = nav.getBoundingClientRect().height
+    document.documentElement.style.setProperty('--navbar-h', `${h}px`)
+    return () => ro.disconnect()
+  }, [])
+
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
