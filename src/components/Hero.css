@@ -256,8 +256,13 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .hero {
+    min-height: auto; /* Let height grow naturally to fit content on small screens */
+  }
+
   .hero__content {
-    padding: 100px 0 120px;
+    padding: 96px 16px 80px; /* Top padding to clear fixed navbar, reduced bottom padding */
+    justify-content: flex-start;
   }
 
   .hero__meta {
@@ -267,7 +272,7 @@
   }
 
   .hero__wave svg {
-    height: 50px;
+    height: 40px;
   }
 }
 
