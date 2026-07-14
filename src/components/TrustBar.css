@@ -1,23 +1,21 @@
-/* ---------- Trust Strip — Minimal Horizontal Band ---------- */
+/* ---------- Trust Strip — Premium Floating Card ---------- */
 .trust-strip {
-  background: var(--white);
-  border-bottom: 1px solid var(--sand);
   position: relative;
   z-index: 5;
+  margin-top: -40px; /* Beautifully overlaps the hero section */
+  margin-bottom: 48px;
 }
 
 .trust-strip__inner {
+  background: var(--white);
+  border: 1px solid var(--sand);
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(13, 74, 62, 0.06);
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 24px;
-  padding: 40px 32px;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.trust-strip__inner::-webkit-scrollbar {
-  display: none;
+  padding: 36px 40px;
 }
 
 .trust-stat {
@@ -58,10 +56,41 @@
 }
 
 @media (max-width: 768px) {
+  .trust-strip {
+    margin-top: -30px;
+    margin-bottom: 32px;
+  }
+
   .trust-strip__inner {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 28px 20px;
-    padding: 32px 20px;
+    gap: 24px 16px;
+    padding: 28px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .trust-strip__inner {
+    gap: 20px 12px;
+    padding: 24px 14px;
+  }
+
+  .trust-stat {
+    gap: 10px;
+  }
+
+  .trust-stat__icon {
+    width: 42px;
+    height: 42px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+  }
+
+  .trust-stat__value {
+    font-size: 1.15rem;
+  }
+
+  .trust-stat__label {
+    font-size: 0.65rem;
   }
 }

@@ -261,6 +261,8 @@
   }
 
   .hero__content {
+    flex: none;
+    height: auto;
     padding: 96px 16px 130px; /* Increased bottom padding to clear the wave transition and avoid overlap */
     justify-content: flex-start;
   }
