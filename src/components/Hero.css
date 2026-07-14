@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   color: var(--white);
-  overflow: hidden; /* clipped on desktop only */
+  overflow: hidden;
 }
 
 .hero__bg {
@@ -257,22 +257,17 @@
 /* Responsive */
 @media (max-width: 768px) {
   .hero {
-    overflow: visible; /* Allow content to overflow so it's not clipped by the wave */
+    /* Switch to block layout on mobile — eliminates flex height collapse issues */
+    display: block;
     min-height: unset;
-  }
-
-  .hero__bg,
-  .hero__overlay {
-    /* Keep bg clipped to the hero bounds */
-    overflow: hidden;
+    overflow: visible;
   }
 
   .hero__content {
-    flex: none;
-    height: auto;
-    /* 96px clears navbar; 100px clears bottom wave (40px) plus extra breathing room */
-    padding: 96px 20px 100px;
-    justify-content: flex-start;
+    position: relative;
+    z-index: 2;
+    /* Top padding clears navbar (~70px) + badge = 96px. Bottom padding is small because wave is now in-flow */
+    padding: 96px 20px 48px;
   }
 
   .hero__meta {
@@ -289,10 +284,14 @@
   }
 
   .hero__wave {
-    /* Make wave relative instead of absolute on mobile so it flows after content */
+    /* Flow the wave after the content naturally */
     position: relative;
     bottom: auto;
+    left: auto;
+    right: auto;
+    width: 100%;
     margin-top: -1px;
+    z-index: 2;
   }
 
   .hero__wave svg {
@@ -302,7 +301,7 @@
 
 @media (max-width: 480px) {
   .hero__content {
-    padding: 88px 16px 32px;
+    padding: 88px 16px 40px;
   }
 
   .hero__ctas {
