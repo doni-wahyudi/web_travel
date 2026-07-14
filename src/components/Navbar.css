@@ -235,6 +235,10 @@
 
 /* Responsive */
 @media (max-width: 968px) {
+  .navbar {
+    position: absolute;
+  }
+
   .navbar__links-desktop,
   .navbar__cta-desktop {
     display: none !important;
