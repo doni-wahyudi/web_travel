@@ -266,8 +266,11 @@
   .hero__content {
     position: relative;
     z-index: 2;
-    /* 110px top clears the fixed navbar (70px) + safe area + breathing room */
-    padding: 110px 20px 56px;
+    /*
+     * Navbar height = ~66px base + safe-area-inset-top (varies by device notch)
+     * We add 24px extra breathing room above the first content element
+     */
+    padding: calc(80px + env(safe-area-inset-top, 0px)) 20px 56px;
   }
 
   .hero__meta {
@@ -301,7 +304,7 @@
 
 @media (max-width: 480px) {
   .hero__content {
-    padding: 100px 16px 48px;
+    padding: calc(76px + env(safe-area-inset-top, 0px)) 16px 48px;
   }
 
   .hero__ctas {
