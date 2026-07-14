@@ -261,14 +261,21 @@
   }
 
   .hero__content {
-    padding: 96px 16px 80px; /* Top padding to clear fixed navbar, reduced bottom padding */
+    padding: 96px 16px 130px; /* Increased bottom padding to clear the wave transition and avoid overlap */
     justify-content: flex-start;
   }
 
   .hero__meta {
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 12px;
+    margin-top: 2em;
+  }
+
+  .hero__meta span {
+    font-size: 0.78rem;
+    padding: 6px 14px;
   }
 
   .hero__wave svg {
