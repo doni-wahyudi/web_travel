@@ -14,7 +14,7 @@ function StatItem({ value, suffix, label, icon, isDecimal }) {
   return (
     <div className="trust-stat" ref={ref}>
       <span className="trust-stat__icon">{icon}</span>
-      <div>
+      <div className="trust-stat__text">
         <span className="trust-stat__value">
           {isDecimal ? (count / 10).toFixed(1) : count}{suffix}
         </span>

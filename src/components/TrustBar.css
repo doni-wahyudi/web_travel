@@ -1,8 +1,8 @@
-/* ---------- Trust Strip — Premium Floating Card ---------- */
+/* ---------- Trust Strip — Floating Stats Card ---------- */
 .trust-strip {
   position: relative;
   z-index: 5;
-  margin-top: -40px; /* Beautifully overlaps the hero section */
+  margin-top: 0;
   margin-bottom: 48px;
 }
 
@@ -10,30 +10,35 @@
   background: var(--white);
   border: 1px solid var(--sand);
   border-radius: 20px;
-  box-shadow: 0 12px 40px rgba(13, 74, 62, 0.06);
+  box-shadow: 0 12px 40px rgba(13, 74, 62, 0.08);
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  gap: 24px;
+  gap: 16px;
   padding: 36px 40px;
 }
 
 .trust-stat {
   display: flex;
   align-items: center;
-  gap: 16px;
-  flex-shrink: 0;
+  gap: 14px;
+  min-width: 0; /* Allow shrinking inside flex container */
 }
 
 .trust-stat__icon {
   width: 52px;
   height: 52px;
+  min-width: 52px; /* Prevent icon from collapsing */
   border-radius: 14px;
   background: linear-gradient(135deg, var(--emerald-glow), rgba(201, 148, 79, 0.08));
   display: grid;
   place-items: center;
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   border: 1px solid var(--sand);
+}
+
+.trust-stat__text {
+  min-width: 0; /* Allow text column to shrink */
 }
 
 .trust-stat__value {
@@ -47,50 +52,53 @@
 
 .trust-stat__label {
   display: block;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 600;
   color: var(--ink-muted);
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   margin-top: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+/* Mobile — 2x2 grid */
 @media (max-width: 768px) {
   .trust-strip {
-    margin-top: -30px;
+    margin-top: 0;
     margin-bottom: 32px;
   }
 
   .trust-strip__inner {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px 16px;
+    gap: 20px 16px;
     padding: 28px 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .trust-strip__inner {
-    gap: 20px 12px;
-    padding: 24px 14px;
   }
 
   .trust-stat {
-    gap: 10px;
+    gap: 12px;
+    align-items: flex-start; /* Icons and text align to top in each cell */
   }
 
   .trust-stat__icon {
-    width: 42px;
-    height: 42px;
-    font-size: 1.1rem;
-    border-radius: 10px;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    font-size: 1.15rem;
+    border-radius: 12px;
+    margin-top: 2px;
   }
 
   .trust-stat__value {
-    font-size: 1.15rem;
+    font-size: 1.25rem;
   }
 
   .trust-stat__label {
     font-size: 0.65rem;
+    white-space: normal; /* Allow wrapping on mobile so nothing is clipped */
+    overflow: visible;
+    text-overflow: unset;
   }
 }
